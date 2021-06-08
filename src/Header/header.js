@@ -1,13 +1,22 @@
 import clases from "./Header.module.css";
 import React from "react";
+import LeftIconeGroup from "../LeftIconeGroup/LeftIconeGroup";
+import CentralLink from "../CentralLink/CentralLink";
+import ReightGroup from "../ReightGroup/ReightGroup";
+const Header = (props) => {
+  console.log(props);
 
-const Header = () => {
   return (
     <div className={clases.Header}>
-      <p> Mon app React</p>
-      <a href="#">Accueil</a>
-      <a href="#">A propos</a>
-      <a href="#">Contacte</a>
+      <LeftIconeGroup></LeftIconeGroup>
+      <CentralLink></CentralLink>
+
+      <ReightGroup
+        message={props.message}
+        pseudo={props.nomUtilisateur}
+      ></ReightGroup>
+
+      {/* {props.children[1]} */}
     </div>
   );
 };
